@@ -1,0 +1,27 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	},
+
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.options": {
+		"ignorePatterns": ["dist"],
+    "overrideConfigFile": "eslint.config.mjs"
+  },
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+	],
+	"eslint.workingDirectories": [
+		{
+			"directory": "./",
+			"changeProcessCWD": true,
+		}
+	],
+	"cSpell.words": [
+		"kemu",
+	],
+	"testing.openTesting": "neverOpen",
+}

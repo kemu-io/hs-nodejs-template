@@ -1,0 +1,25 @@
+{
+  "name": "kemu.test.nodejs",
+  "version": "1.0.0",
+  "title": "Simple Processor",
+  "shortTitle": "SP",
+  "description": "Just a tester of the hs package",
+  "processor": "js",
+  "widgetUI": false,
+  "settingsUI": false,
+  "eventEmitter": false,
+  "ignoreParentEvents": false,
+  "svgIcon": "icon.svg",
+  "inputs": [
+    {
+      "name": "image",
+      "type": "ImageData"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "image",
+      "type": "ImageData"
+    }
+  ]
+}
