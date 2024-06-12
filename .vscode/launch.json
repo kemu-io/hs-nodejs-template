@@ -13,10 +13,11 @@
       "program": "${workspaceFolder}/dist/processor.js",
       "outFiles": ["${workspaceFolder}/**/*.js"],
       "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
       "env": {
         "DEBUG": "kemuWidgetService",
         // "NO_INVOKE_TIMEOUT": "true",
-        "KEMU_WIDGET_SESSION_ID": "12345",
+        // "KEMU_WIDGET_SESSION_ID": "12345",
       }
     },
   ]
