@@ -2,7 +2,7 @@
   "name": "test.company.nodejs",
   "version": "1.0.0",
   "title": "Sample Service Processor",
-  "shortTitle": "SP",
+  "shortTitle": "Test",
   "description": "Sample project for a Kemu Service processor",
   "processor": "js",
   "widgetUI": false,
@@ -12,14 +12,14 @@
   "svgIcon": "icon.svg",
   "inputs": [
     {
-      "name": "image",
-      "type": "ImageData"
+      "name": "input",
+      "type": "Number"
     }
   ],
   "outputs": [
     {
-      "name": "image",
-      "type": "ImageData"
+      "name": "output",
+      "type": "Number"
     }
   ]
 }

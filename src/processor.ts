@@ -8,7 +8,7 @@ service.start();
     console.log('Parent event:', event, context);
     context.setOutputs([
       {
-        name: 'image',
+        name: 'output',
         type: DataType.Number,
         value: event.data.value
       }
