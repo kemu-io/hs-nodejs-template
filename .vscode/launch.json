@@ -8,6 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Debug Processor",
+      "runtimeVersion": "22.2.0",
       "preLaunchTask": "pre-launch-task",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/dist/processor.js",
@@ -17,7 +18,6 @@
       "env": {
         "DEBUG": "kemuWidgetService",
         // "NO_INVOKE_TIMEOUT": "true",
-        // "KEMU_WIDGET_SESSION_ID": "12345",
       }
     },
   ]

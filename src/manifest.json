@@ -1,9 +1,9 @@
 {
-  "name": "kemu.test.nodejs",
+  "name": "test.company.nodejs",
   "version": "1.0.0",
-  "title": "Simple Processor",
+  "title": "Sample Service Processor",
   "shortTitle": "SP",
-  "description": "Just a tester of the hs package",
+  "description": "Sample project for a Kemu Service processor",
   "processor": "js",
   "widgetUI": false,
   "settingsUI": false,
