@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@kemu-io/hs": "github:kemu-io/hs#v0.2.0"
+    "@kemu-io/hs": "github:kemu-io/hs#v0.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
