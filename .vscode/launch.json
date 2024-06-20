@@ -13,7 +13,7 @@
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/dist/processor.js",
       "outFiles": ["${workspaceFolder}/**/*.js"],
-      "console": "integratedTerminal",
+      // "console": "integratedTerminal",
       "envFile": "${workspaceFolder}/.env",
       "env": {
         "DEBUG": "kemuWidgetService",

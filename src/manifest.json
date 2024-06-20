@@ -10,6 +10,7 @@
   "eventEmitter": false,
   "ignoreParentEvents": false,
   "svgIcon": "icon.svg",
+  "color": "#FF0500",
   "inputs": [
     {
       "name": "input",
@@ -19,6 +20,10 @@
   "outputs": [
     {
       "name": "output",
+      "type": "Number"
+    },
+    {
+      "name": "output2",
       "type": "Number"
     }
   ]
