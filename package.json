@@ -9,6 +9,7 @@
     "npm": ">=10.7.0"
   },
   "scripts": {
+    "pack": "gulp pack",
     "build": "npx rimraf dist/ && tsc && npm run copyFiles",
     "copyFiles": "copyfiles -f src/manifest.json src/icon.svg src/assets/**/* dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
