@@ -21,7 +21,8 @@ const packageJson = readJsonFile('./package.json');
 const serviceName = manifest.name;
 const version = manifest.version;
 // Check if pnpm is used by checking the existence of pnpm-workspace.yml
-const isPnpm = existsSync('pnpm-workspace.yaml');
+// const isPnpm = existsSync('pnpm-workspace.yaml');
+const isPnpm = false;
 
 // Task to run 'npm run pack'
 gulp.task('build', (cb) => {
@@ -58,12 +59,14 @@ gulp.task('clean', () => {
 // Task to install production dependencies in the build directory
 gulp.task('npm-install-prod', (cb) => {
   // NPM's
-  if(!isPnpm) {
+  if(!isPnpm ) {
     exec('npm install --omit=dev --prefix ./build', (err, stdout, stderr) => {
       console.log(stdout);
       console.error(stderr);
       cb(err);
     });
+
+    return;
   }
 
   // PNPM's
@@ -77,7 +80,7 @@ gulp.task('npm-install-prod', (cb) => {
 
 // Task to zip the build directory
 gulp.task('zip-build', () => {
-  return gulp.src('build/**/*')
+  return gulp.src(['build/**/**/*'], { dot: true, resolveSymlinks: true })
     .pipe(zip(`${serviceName}@${version}.zip`))
     .pipe(gulp.dest(`${outputDir}/`));
 });
