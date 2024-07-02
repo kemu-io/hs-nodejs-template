@@ -3,22 +3,31 @@
   "version": "0.1.0",
   "description": "",
   "main": "dist/processor.js",
+  "files": ["dist/**/*"],
+  "engines": {
+    "node": ">=22.2.0",
+    "npm": ">=10.7.0"
+  },
   "scripts": {
     "build": "npx rimraf dist/ && tsc && npm run copyFiles",
-    "copyFiles": "copyfiles -f src/manifest.json src/icon.svg dist/",
+    "copyFiles": "copyfiles -f src/manifest.json src/icon.svg src/assets/**/* dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs src/**/*.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@kemu-io/hs": "https://github.com/kemu-io/hs#latest"
+    "@kemu-io/hs": "https://github.com/kemu-io/hs#latest",
+    "@kemu-io/hs-types": "https://github.com/kemu-io/hs-types#latest"
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
     "@types/eslint__js": "^8.42.3",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
+    "del": "^7.1.0",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^6.0.0",
     "rimraf": "^5.0.7",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.4.5",

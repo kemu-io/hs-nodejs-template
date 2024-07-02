@@ -1,3 +1,5 @@
 dist
+build
 .npmrc
 node_modules
+.env
