@@ -93,11 +93,22 @@ gulp.task('remove-artifacts', () => {
   ]);
 });
 
+// Removes the test. prefix from the manifest name which is not
+// allowed in prod services.
+gulp.task('patch-manifest', async () => {
+  if(manifest.name.startsWith('test.')) {
+    manifest.name = manifest.name.slice(5);
+  }
+
+  await writeFile(`dist/manifest.json`, JSON.stringify(manifest, null, 2));
+});
+
 // Define the default task
 const pack = gulp.series(
   'clean',
   'build',
   'copy-dist',
+  'patch-manifest',
   'copy-package-json',
   'npm-install-prod',
   'zip-build',
