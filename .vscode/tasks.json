@@ -3,23 +3,12 @@
   "tasks": [
     {
       "type": "shell",
-      "command": "npx copyfiles -f src/manifest.json src/icon.svg dist/",
-      "label": "copyfiles",
-    },
-    {
-      "type": "shell",
-      "label": "tsc",
-      "command": "./node_modules/.bin/tsc",
-      "args": ["-p", "tsconfig.json"],
-      "problemMatcher": ["$tsc"],
+      "label": "pre-launch-task",
+      "command": "npm run build",
       "group": {
         "kind": "build",
         "isDefault": true
       }
     },
-    {
-      "label": "pre-launch-task",
-      "dependsOn": ["tsc", "copyfiles"],
-    }
   ]
 }
