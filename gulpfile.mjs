@@ -4,7 +4,8 @@ import gulp from 'gulp';
 import { exec } from 'child_process';
 import zip from 'gulp-zip';
 import { deleteAsync } from 'del';
-import { existsSync, readFileSync } from 'fs';
+import { readFileSync } from 'fs';
+import { writeFile } from 'fs/promises';
 
 // Read a JSON file
 const readJsonFile = (filePath) => {

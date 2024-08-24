@@ -3,7 +3,8 @@
   "exclude": ["node_modules", "dist", "src/**/*.test.ts"],
   "compilerOptions": {
     "target": "ESNext", 
-    "module": "CommonJS",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "sourceMap": true,
     "esModuleInterop": false,
     "removeComments": false,
