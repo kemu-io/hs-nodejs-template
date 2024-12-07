@@ -21,9 +21,6 @@ const packageJson = readJsonFile('./package.json');
 // Define the service name and version for the zip file name
 const serviceName = manifest.name;
 const version = manifest.version;
-// Check if pnpm is used by checking the existence of pnpm-workspace.yml
-// const isPnpm = existsSync('pnpm-workspace.yaml');
-const isPnpm = false;
 
 // Task to run 'npm run pack'
 gulp.task('build', (cb) => {
@@ -36,18 +33,14 @@ gulp.task('build', (cb) => {
 
 // Task to copy package.json to the build directory
 gulp.task('copy-package-json', async () => {
-  if(!isPnpm) {
-    return gulp.src('package.json')
-      .pipe(gulp.dest(`${outputDir}/`));
-  }
+  return gulp.src('package.json')
+    .pipe(gulp.dest(`${outputDir}/`));
 });
 
 // Copy all the built files
 gulp.task('copy-dist', async () => {
-  if(!isPnpm) {
-    return gulp.src('dist/**/*')
-      .pipe(gulp.dest(`${outputDir}/dist/`));
-  }
+  return gulp.src('dist/**/*')
+    .pipe(gulp.dest(`${outputDir}/dist/`));
 });
 
 // Remove build directory
@@ -60,19 +53,7 @@ gulp.task('clean', () => {
 // Task to install production dependencies in the build directory
 gulp.task('npm-install-prod', (cb) => {
   // NPM's
-  if(!isPnpm ) {
-    exec('npm install --omit=dev --prefix ./build', (err, stdout, stderr) => {
-      console.log(stdout);
-      console.error(stderr);
-      cb(err);
-    });
-
-    return;
-  }
-
-  // PNPM's
-  const packageName = packageJson.name;
-  exec(`pnpm --filter='${packageName}' --prod deploy ./build`, (err, stdout, stderr) => {
+  exec('npm install --omit=dev --prefix ./build', (err, stdout, stderr) => {
     console.log(stdout);
     console.error(stderr);
     cb(err);
@@ -105,7 +86,7 @@ gulp.task('patch-manifest', async () => {
 });
 
 // Define the default task
-const pack = gulp.series(
+const release = gulp.series(
   'clean',
   'build',
   'copy-dist',
@@ -116,4 +97,4 @@ const pack = gulp.series(
   'remove-artifacts'
 );
 
-export { pack };
+export { release };

@@ -1,5 +1,4 @@
-import createService from '@kemu-io/hs';
-import { DataType } from '@kemu-io/hs-types';
+import createService, { DataType } from '@kemu-io/hs';
 
 const service = new createService();
 await service.start();

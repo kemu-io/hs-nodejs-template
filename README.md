@@ -38,11 +38,11 @@ pnpm run build
 
 This will compile the TypeScript files and copy the necessary files to the `dist` directory.
 
-## Pack Your Service For Deployment
-This project includes a script to pack your service to be deployed to the Kemu Hub. To pack your service, run:
+## Release Your Service For Deployment
+This project includes a script to release your service to be deployed to the Kemu Hub. To release your service, run:
 
 ```bash
-pnpm run pack
+pnpm run release
 ```
 
 

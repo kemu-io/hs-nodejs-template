@@ -12,7 +12,7 @@
     "npm": ">=10.7.0"
   },
   "scripts": {
-    "pack": "gulp pack",
+    "release": "gulp release",
     "build": "npx rimraf dist/ && tsc && npm run copyFiles",
     "copyFolders": "copyfiles -u 1 src/customWidgets/* dist/",
     "copyFiles": "copyfiles -f src/manifest.json src/icon.svg src/assets/**/* dist/",
@@ -21,10 +21,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@kemu-io/hs": "github:kemu-io/hs#latest",
-    "@kemu-io/hs-types": "github:kemu-io/hs-types#latest"
-  },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
     "@types/eslint__js": "^8.42.3",
@@ -38,5 +34,8 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.12.0"
   },
-  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
+  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf",
+  "dependencies": {
+    "@kemu-io/hs": "^0.4.42"
+  }
 }
