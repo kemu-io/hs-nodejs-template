@@ -46,7 +46,7 @@ gulp.task('copy-dist', async () => {
 // copy the docs folder
 gulp.task('copy-docs', async () => {
   return gulp.src('docs/**/*', { allowEmpty: true })
-    .pipe(gulp.dest(`${outputDir}/docs/`));
+    .pipe(gulp.dest(`${outputDir}/dist/docs/`));
 });
 
 // Remove build directory
