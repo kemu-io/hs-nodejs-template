@@ -17,5 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "preserveConstEnums": true,
     "lib": ["ESNext", "DOM"],
+    "types": ["node"]
   }
 }
